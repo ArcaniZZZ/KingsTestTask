@@ -26,8 +26,6 @@
 		EA87862F2A2022B10038558D /* ScrollableRowVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87862E2A2022B10038558D /* ScrollableRowVIew.swift */; };
 		EA8786312A202AFA0038558D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8786302A202AFA0038558D /* Launch Screen.storyboard */; };
 		EA8786342A202BF00038558D /* ClientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8786332A202BF00038558D /* ClientDetailView.swift */; };
-		EA8786362A203BE60038558D /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8786352A203BE60038558D /* BottomSheetView.swift */; };
-		EA8786382A20C19E0038558D /* MockJSON1.json in Resources */ = {isa = PBXBuildFile; fileRef = EA8786372A20C19E0038558D /* MockJSON1.json */; };
 		EA87863C2A20E6F40038558D /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87863B2A20E6F40038558D /* Enums.swift */; };
 		EA87863E2A20E8720038558D /* FullStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87863D2A20E8720038558D /* FullStatus.swift */; };
 /* End PBXBuildFile section */
@@ -54,8 +52,6 @@
 		EA87862E2A2022B10038558D /* ScrollableRowVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableRowVIew.swift; sourceTree = "<group>"; };
 		EA8786302A202AFA0038558D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EA8786332A202BF00038558D /* ClientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailView.swift; sourceTree = "<group>"; };
-		EA8786352A203BE60038558D /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
-		EA8786372A20C19E0038558D /* MockJSON1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockJSON1.json; sourceTree = "<group>"; };
 		EA87863B2A20E6F40038558D /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EA87863D2A20E8720038558D /* FullStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				EA33D1122A1FE0410083BCB3 /* MockJSON.json */,
-				EA8786372A20C19E0038558D /* MockJSON1.json */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -209,7 +204,6 @@
 			children = (
 				EA87861F2A1FF7360038558D /* ExpandedCellBottomView.swift */,
 				EA87862E2A2022B10038558D /* ScrollableRowVIew.swift */,
-				EA8786352A203BE60038558D /* BottomSheetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -329,7 +323,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA33D1132A1FE0410083BCB3 /* MockJSON.json in Resources */,
-				EA8786382A20C19E0038558D /* MockJSON1.json in Resources */,
 				EA8786312A202AFA0038558D /* Launch Screen.storyboard in Resources */,
 				EA33D1072A1FDEC00083BCB3 /* Assets.xcassets in Resources */,
 			);
@@ -353,7 +346,6 @@
 				EA33D1292A1FE9BD0083BCB3 /* ClientList + ViewModel.swift in Sources */,
 				EA87862B2A200B080038558D /* BrandColors.swift in Sources */,
 				EA33D12D2A1FEDA70083BCB3 /* CollapsableView.swift in Sources */,
-				EA8786362A203BE60038558D /* BottomSheetView.swift in Sources */,
 				EA33D1262A1FE99F0083BCB3 /* ClientList.swift in Sources */,
 				EA33D1162A1FE0860083BCB3 /* Client.swift in Sources */,
 				EA87863E2A20E8720038558D /* FullStatus.swift in Sources */,

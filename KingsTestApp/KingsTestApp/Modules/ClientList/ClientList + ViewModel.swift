@@ -47,6 +47,51 @@ extension ClientList {
         }
         
         
+        // MARK: - Public Methods
+        
+        func sortByName(ascendingOrder: Bool) {
+            displayedClients.sort {
+                return ascendingOrder
+                ? ($0.firstName ?? "") < ($1.firstName ?? "")
+                : ($0.firstName ?? "") > ($1.firstName ?? "")
+            }
+        }
+        
+        func sortByLastName(ascendingOrder: Bool) {
+            displayedClients.sort {
+                return ascendingOrder
+                ? ($0.lastName ?? "") < ($1.lastName ?? "")
+                : ($0.lastName ?? "") > ($1.lastName ?? "")
+            }
+        }
+        
+        func sortByCreationData(ascendingOrder: Bool) {
+            displayedClients.sort {
+                return ascendingOrder
+                ? $0.created?.convertToDate() ?? Date() < $1.created?.convertToDate() ?? Date()
+                : $0.created?.convertToDate() ?? Date() > $1.created?.convertToDate() ?? Date()
+            }
+        }
+        
+        func sortByStatus(isReadyFirst: Bool) {
+            let inProgress = displayedClients.filter { $0.fullStatus.statusLabel == "Preplacement In Progress" }
+            let ready = displayedClients.filter { $0.fullStatus.statusLabel == "Ready for Preplacement" }
+            
+            var resultArray: [Client] {
+                return isReadyFirst ? ready + inProgress : inProgress + ready
+            }
+            
+            displayedClients = resultArray
+        }
+  
+  
+        func clearFiltersAndSortingCriteria() {
+            dateFilter = .now
+            statusFilter = .all
+            displayedClients = clients
+        }
+        
+        
         // MARK: - Private Methods
         
         private func didChangeFilter() {

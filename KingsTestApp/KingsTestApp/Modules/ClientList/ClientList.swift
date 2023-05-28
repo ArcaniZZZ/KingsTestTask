@@ -33,7 +33,7 @@ struct ClientList: View {
             }
             .sheet(isPresented: $isShowingBottomSheet) {
                 bottomSheetView
-                    .presentationDetents([.fraction(0.25)])
+                    .presentationDetents([.fraction(0.8)])
                     .presentationDragIndicator(.visible)
             }
             .navigationTitle("Client List")
@@ -111,6 +111,7 @@ extension ClientList {
                     .foregroundColor(.white)
                 Text(viewModel.statusFilter.rawValue)
                     .foregroundColor(.white)
+                    .fixedSize()
             }
             .padding(.vertical, 8)
             .padding(.horizontal, 12)
@@ -126,17 +127,111 @@ extension ClientList {
     }
     
     private var bottomSheetView: some View {
-        VStack {
+        VStack(spacing: 10) {
             Text("Choose additional filters")
-                .font(.title2)
+                .padding(.bottom, 20)
+                .fontWeight(.heavy)
             datePickerView
-                .padding(.bottom)
             Divider()
             HStack {
                 Text("Client's status")
                 Spacer()
                 statusMenuButton
             }
+            Divider()
+            
+            Group {
+                VStack {
+                    HStack {
+                        Text("Sort by name")
+                            .fontWeight(.medium)
+                        Spacer()
+                    }
+                        
+                    HStack {
+                        Button("Ascending") {
+                            viewModel.sortByName(ascendingOrder: true)
+                        }.buttonStyle(.borderedProminent)
+                        
+                        Spacer()
+                        
+                        Button("Descending") {
+                            viewModel.sortByName(ascendingOrder: false)
+                        }.buttonStyle(.borderedProminent)
+                    }
+                }
+                Divider()
+                
+                VStack {
+                    HStack {
+                        Text("Sort by last name")
+                            .fontWeight(.medium)
+                        Spacer()
+                    }
+                    HStack {
+                        Button("Ascending") {
+                            viewModel.sortByLastName(ascendingOrder: true)
+                        }.buttonStyle(.borderedProminent)
+                        
+                        Spacer()
+                        
+                        Button("Descending") {
+                            viewModel.sortByLastName(ascendingOrder: false)
+                        }.buttonStyle(.borderedProminent)
+                    }
+                }
+                
+                Divider()
+            }
+            
+            Group {
+                VStack {
+                    HStack {
+                        Text("Sort by creation date")
+                            .fontWeight(.medium)
+                        Spacer()
+                    }
+                    HStack {
+                        Button("Ascending") {
+                            viewModel.sortByCreationData(ascendingOrder: true)
+                        }.buttonStyle(.borderedProminent)
+                        
+                        Spacer()
+                        
+                        Button("Descending") {
+                            viewModel.sortByCreationData(ascendingOrder: false)
+                        }.buttonStyle(.borderedProminent)
+                    }
+                }
+                Divider()
+                
+                VStack {
+                    HStack {
+                        Text("Sort by status")
+                            .fontWeight(.medium)
+                        Spacer()
+                    }
+                    HStack {
+                        Button("Ready first") {
+                            viewModel.sortByStatus(isReadyFirst: true)
+                        }.buttonStyle(.borderedProminent)
+                        
+                        Spacer()
+                        
+                        Button("Preplacement first") {
+                            viewModel.sortByStatus(isReadyFirst: false)
+                        }.buttonStyle(.borderedProminent)
+                    }
+                }
+                Divider()
+            }
+            .padding(.bottom, 10)
+            Button("Delete all filters and sorting criteria") {
+                viewModel.clearFiltersAndSortingCriteria()
+            }
+            .buttonStyle(.bordered)
+
+            
         }
         .padding(.horizontal)
     }
